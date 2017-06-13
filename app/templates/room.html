@@ -1,2 +1,10 @@
-<h1>Room Page<h1>
-<h2 ng-repeat="thisRoom in roomctrl.theRooms">{{ thisRoom.$value }}<h2>
+<section>
+    <h1>Room Page<h1>
+    <h2 ng-repeat="thisRoom in roomctrl.theRooms">{{ thisRoom.$value }}<h2>
+
+    <form ng-submit="roomctrl.addRoom()">
+        Enter text and hit enter:
+        <input type="text" ng-model="roomctrl.newRoomName"/>
+        <input type="submit" id="submit" value="Submit" />
+    </form>
+</section>
