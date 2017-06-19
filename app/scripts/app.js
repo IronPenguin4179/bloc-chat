@@ -11,6 +11,14 @@
                 url: '/',
                 controller: 'RoomCtrl as roomctrl',
                 templateUrl: '/templates/room.html'
+            })
+            .state('modal', {
+                controller: 'ModalCtrl as modalctrl',
+                templateUrl: '/templates/modal.html'
+            })
+            .state('modalInstance', {
+                controller: 'ModalInstanceCtrl as modalinstancectrl',
+                templateUrl: '/templates/modal.html'
             });
     }
      

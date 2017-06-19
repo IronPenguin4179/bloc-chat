@@ -20,20 +20,15 @@
   </div>
 </nav>
 
-<div class="container rooms">
-  <div class="starter-template">
-    <h1>Bootstrap starter template</h1>
-    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-  </div>
-    
+<div class="container">
+    <div>. </div>
+    <div>. </div>
     <h1>Room Page<h1>
-    <h2 ng-repeat="thisRoom in roomctrl.theRooms">{{ thisRoom.$value }}<h2>
-
-    <form ng-submit="roomctrl.addRoom()">
-        Enter text and hit enter:
-        <input type="text" placeholder="Room Name" ng-model="roomctrl.newRoomName"/>
-        <input type="submit" id="submit" value="Submit" />
-    </form>
-
+    <h2 ng-repeat="thisRoom in roomctrl.theRooms">
+      <div>{{ thisRoom.$value }}</div>
+    <h2>
+    <div ng-controller="ModalCtrl as modalctrl">
+      <button type="button" class="btn btn-default" ng-click="modalctrl.open()">+</button>
+    </div>
 
 </div>

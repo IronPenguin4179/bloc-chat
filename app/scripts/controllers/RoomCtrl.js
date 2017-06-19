@@ -6,6 +6,9 @@
             Room.add(this.newRoomName)
             this.newRoomName = '';
         };
+        this.deleteRoom = function() {
+            Room.remove(roomNum);
+        }
     }
  
     angular

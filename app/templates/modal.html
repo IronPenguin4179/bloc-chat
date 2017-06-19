@@ -1,0 +1,17 @@
+<div class="newChatRoomModal">
+    
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Create new chat room</h3>
+    </div>
+    <div class="container" ng-controller="RoomCtrl as roomctrl">
+        <form class="container" ng-submit="roomctrl.addRoom()" style=font-size:23px;>
+            <div class ="row">
+                <input type="text" placeholder="Room Name" ng-model="roomctrl.newRoomName"/>
+            </div>
+            <div class="row" style="padding-top:1rem; padding-bottom:1rem">
+                <input class="btn btn-primary" type="submit" id="submit" value="Create new room" ng-click="modalinstancectrl.ok()"/>
+                <button class="btn btn-warning" type="button" ng-click="modalinstancectrl.cancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
