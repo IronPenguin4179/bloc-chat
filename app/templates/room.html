@@ -20,15 +20,34 @@
   </div>
 </nav>
 
-<div class="container">
-    <div>. </div>
-    <div>. </div>
-    <h1>Room Page<h1>
-    <h2 ng-repeat="thisRoom in roomctrl.theRooms">
-      <div>{{ thisRoom.$value }}</div>
-    <h2>
-    <div ng-controller="ModalCtrl as modalctrl">
-      <button type="button" class="btn btn-default" ng-click="modalctrl.open()">+</button>
-    </div>
+<div>. </div>
+<div>. </div>
 
+<div class="container row">
+    <!--Main Section-->
+    <section class="col-md-6" style="border-right:grey dotted">  
+        <h1>Room Page<h1>
+
+        <div ng-repeat="thisRoom in roomctrl.theRooms">
+            <a ng-click="roomctrl.makeCurrentRoom(thisRoom)">
+              {{ thisRoom.$value }}
+            </a>
+        </div>
+        
+        <div ng-controller="ModalCtrl as modalctrl">
+            <button type="button" class="btn btn-default" ng-click="modalctrl.open()">
+              Add Room
+            </button>
+        </div>
+    </section>
+    
+    <!--Side Section-->
+    <section class="col-md" style="padding-left: 1rem">
+        <h1>{{ roomctrl.currentRoomName }} </h1>
+        <table ng-repeat="thisMessage in roomctrl.messages" style="border: silver solid">
+          <tr>
+            <td>{{ thisMessage.content }}</td>
+          </tr>
+        </table>
+    </section>
 </div>

@@ -1,17 +1,20 @@
 (function() {
-    function RoomCtrl(Room) {
+    function RoomCtrl(Room, Message) {
+        this.makeCurrentRoom = function(room) {
+            this.currentRoomName = room.$value;
+            this.messages = Message.getByRoomId(room.$id);
+            console.log(this.messages);
+        }
         
         this.theRooms = Room.all;
         this.addRoom = function() {
             Room.add(this.newRoomName)
             this.newRoomName = '';
         };
-        this.deleteRoom = function() {
-            Room.remove(roomNum);
-        }
+
     }
  
     angular
         .module('bloc-chat')
-        .controller('RoomCtrl', ['Room', RoomCtrl]);
+        .controller('RoomCtrl', ['Room','Message', RoomCtrl]);
 })();
