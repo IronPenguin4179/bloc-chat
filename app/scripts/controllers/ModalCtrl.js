@@ -1,8 +1,7 @@
 (function() {
     function ModalCtrl($uibModal) {
-        this.open = function (size, parentSelector) {
-            //var parentElem = parentSelector ? 
-            //angular.element($document[0].querySelector('.newChatRoomModal ' + parentSelector)) : undefined;
+        this.open = function () {
+    
             var modalInstance = $uibModal.open({
                 animation: this.animationsEnabled,
                 ariaLabelledBy: 'modal-title',
@@ -10,13 +9,11 @@
                 templateUrl: '/templates/modal.html',
                 controller: 'ModalInstanceCtrl',
                 controllerAs: 'modalinstancectrl'
-              //  size: size,
-              //  appendTo: parentElem,
             });
         }
     }
             
     angular
         .module('bloc-chat')
-        .controller('ModalCtrl',["$uibModal",ModalCtrl]);
+        .controller('ModalCtrl',['$uibModal',ModalCtrl]);
 })();

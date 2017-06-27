@@ -1,8 +1,10 @@
 (function() {
     function ModalInstanceCtrl($uibModalInstance) {
-        this.word = "foo";
-        this.work = function () {
-            this.word = "bar";
+        this.newUsername = "wrongName";
+        
+        this.addName = function() {
+            this.newUsername = this.name;
+            console.log(this.newUsername);
         }
         this.ok = function () {
             $uibModalInstance.close();
@@ -14,5 +16,5 @@
     }
          angular
         .module('bloc-chat')
-        .controller('ModalInstanceCtrl',["$uibModalInstance",ModalInstanceCtrl]);
+        .controller('ModalInstanceCtrl',['$uibModalInstance',ModalInstanceCtrl]);
 })();

@@ -4,6 +4,7 @@
             this.currentRoomName = room.$value;
             this.messages = Message.getByRoomId(room.$id);
             console.log(this.messages);
+            
         }
         
         this.theRooms = Room.all;

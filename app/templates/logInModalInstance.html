@@ -1,0 +1,16 @@
+<div class="logInModal">
+    
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Enter username</h3>
+    </div>
+    <div class="container" ng-controller="LogInModalCtrl as loginmodalctrl">
+        <form class="container" ng-submit="loginmodalctrl.addName()" style=font-size:23px;>
+            <div class ="row">
+                <input type="text" placeholder="Enter username" ng-model="loginmodalctrl.name"/>
+            </div>
+            <div class="row" style="padding-top:1rem; padding-bottom:1rem">
+                <input class="btn btn-primary" type="submit" id="submit" value="Create username" ng-click="modalinstancectrl.ok()"/>
+            </div>
+        </form>
+    </div>
+</div>
