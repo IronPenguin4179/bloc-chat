@@ -41,13 +41,20 @@
     <!--Side Section-->
     <section class="col-md-6" style="padding-left: 1rem">
         <div>
+            <h1 ng-show = "roomctrl.currentRoomName === null">Welcome to Bloc Chat {{ roomctrl.currentUser }}!<h1>
             <h1>{{ roomctrl.currentRoomName }} </h1>
             <table ng-repeat="thisMessage in roomctrl.messages" style="border: silver solid">
               <tr>
                 <td>{{ thisMessage.content }}</td>
               </tr>
             </table>
-            <!--<textarea name="message" id="message" cols="30" rows="10"></textarea>-->
+            <form ng-show = "roomctrl.currentRoomName !== null" ng-submit="roomctrl.messageSend()" style=font-size:23px;>
+                <textarea type="text" placeholder="Type message..." ng-model="roomctrl.messageContent" cols="40" rows="3"></textarea>
+                <div style="padding-top:1rem; padding-bottom:1rem">
+                    <input class="btn btn-primary" type="submit" id="submit" value="Send"/>
+                </div>
+            </form>
+        
         </div>
     </section>
 </div>

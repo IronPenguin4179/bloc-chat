@@ -4,7 +4,6 @@
         
         this.addName = function() {
             this.newUsername = this.name;
-            console.log(this.newUsername);
         }
         this.ok = function () {
             $uibModalInstance.close();
