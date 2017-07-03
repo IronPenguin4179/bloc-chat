@@ -1,13 +1,13 @@
 <!--NAVBAR-->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Bloc Chat</a>
+      <a style="font-size: 2em" class="navbar-brand" href="#">Bloc Chat</a>
     </div>
 </nav>
 
 <div class="container row" style="padding-top: 51px; height: 100vh">
     <!--Main Section-->
-    <section class="col-md-6" style="border-right:grey dotted; min-height:100%">  
+    <section class="col-md-6" style="border-right:#00bc8c solid; min-height:100%">  
         <h1>Room Page<h1>
 
         <div ng-repeat="thisRoom in roomctrl.theRooms">
@@ -17,7 +17,7 @@
         </div>
         
         <div ng-controller="ModalCtrl as modalctrl">
-            <button type="button" class="btn btn-primary btn-large" ng-click="modalctrl.open()">
+            <button type="button" class="btn btn-success btn-large" ng-click="modalctrl.open()">
               Add Room
             </button>
         </div>
@@ -28,19 +28,22 @@
         <div>
             <h1 ng-show = "roomctrl.currentRoomName === null">Welcome to Bloc Chat {{ roomctrl.currentUser }}!<h1>
             <h1>{{ roomctrl.currentRoomName }} </h1>
-            <table ng-show = "roomctrl.currentRoomName !== null" class="table table-striped table-hover ">
+            <table ng-show="roomctrl.currentRoomName !== null" class="table table-striped table-hover ">
                 <thead>
                     <tr>
-                        <td>Message</td>
                         <td>Sent By</td>
+                        <td>Message</td>
                         <td>Time Sent</td>
                     </tr>
                 </thead>
                 <tbody ng-repeat="thisMessage in roomctrl.messages">
+                    <tr class="success">
+                        <td style="color: black">{{ thisMessage.username }}</td>
+                        <td style="color: black">{{ thisMessage.content }}</td>
+                        <td style="color: black">{{ thisMessage.sentAt }}</td> 
+                    </tr>
                     <tr>
-                        <td>{{ thisMessage.content }}</td>
-                        <td>{{ thisMessage.username }}</td>
-                        <td>{{ thisMessage.sentAt }}</td>                    </tr>
+                    </tr>
                 </tbody>
             </table>
 
@@ -49,7 +52,7 @@
             <form ng-show = "roomctrl.currentRoomName !== null" ng-submit="roomctrl.messageSend()" style=font-size:23px;>
                 <textarea type="text" placeholder="Type message..." ng-model="roomctrl.messageContent" cols="40" rows="3"></textarea>
                 <div style="padding-top:1rem; padding-bottom:1rem">
-                    <input class="btn btn-primary" type="submit" id="submit" value="Send"/>
+                    <input class="btn btn-success" type="submit" id="submit" value="Send"/>
                 </div>
             </form>
         
